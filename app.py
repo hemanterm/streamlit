@@ -8,6 +8,7 @@ Created on Fri Nov 20 12:37:39 2020
 import streamlit as st
 import webbrowser
 from d3graph import d3graph, vec2adjmat
+import streamlit.components.v1 as components
 
 
 source = ['node A','node F','node B','node B','node B','node A','node C','node Z']
@@ -26,6 +27,12 @@ node_size = [10,20,10,10,15,10,5]
 if st.button('Draw the Network Plot'):
     out = d3graph(adjmat, node_color=adjmat.columns.values, node_size=node_size)
     webbrowser.open('index.html')
+    out['G']
+    HtmlFile = open('index.html')
+    source_code = HtmlFile.read()
+    components.iframe(source_code)
+    components.html(HtmlFile)
+    
 
 
 
