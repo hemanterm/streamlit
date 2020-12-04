@@ -31,7 +31,7 @@ if st.button('Draw the Network Plot'):
     HtmlFile = open('index.html')
     source_code = HtmlFile.read()
     components.iframe(source_code)
-    components.html(HtmlFile)
+    #components.html(HtmlFile)
     
 
 
